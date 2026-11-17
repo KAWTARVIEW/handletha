@@ -1,128 +1,631 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HUNANIMA - Machines Agricoles Simples</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HANDLE THAT ENTERPRISE LLC | Personal &amp; Household Goods Repair and Maintenance</title>
+  <meta name="description" content="Private independent personal and household goods repair, restoration, and maintenance services in Warner Robins, Georgia." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            workshopDark: '#12161A',
+            surfaceSlate: '#1B2228',
+            panelGray: '#242D35',
+            toolCopper: {
+              DEFAULT: '#D97706',
+              light: '#F59E0B',
+              dark: '#B45309',
+            },
+            accentCyan: '#06B6D4',
+            lightMetal: '#F3F4F6',
+          },
+          fontFamily: {
+            heading: ['"Outfit"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'copper-glow': '0 0 40px -10px rgba(217, 119, 6, 0.40)',
+            'card-workshop': '0 20px 40px -12px rgba(18, 22, 26, 0.65)',
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fefefe;
-      color: #333;
+      background-color: #12161A;
+      color: #F3F4F6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
     }
-    header {
-      background-color: #2e7d32; /* Vert foncé */
-      color: #fdd835; /* Jaune vif */
-      padding: 20px;
-      text-align: center;
+
+    .copper-gradient-text {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #06B6D4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.2em;
-    }
-    nav {
-      background-color: #fdd835;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #2e7d32;
-    }
-    .hero {
-      background: url('https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg') no-repeat center center/cover;
-      height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
-      font-size: 2em;
-    }
-    section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-    section h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .gallery img {
-      width: 280px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    footer {
-      background-color: #2e7d32;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    footer p {
-      margin: 5px 0;
+
+    .glass-panel-workshop {
+      background: rgba(27, 34, 40, 0.90);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(217, 119, 6, 0.25);
     }
   </style>
 </head>
-<body>
+<body class="antialiased selection:bg-toolCopper selection:text-white">
 
-  <header>
-    <h1>HUNANIMA</h1>
-    <p>Machines Agricoles Simples et Fiables</p>
+  <!-- STICKY NAVIGATION HEADER -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b border-toolCopper/20 bg-workshopDark/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Brand Identity -->
+        <a href="#hero" class="flex items-center gap-3.5 group">
+          <div class="w-10 h-10 rounded-xl border border-toolCopper/50 bg-surfaceSlate flex items-center justify-center shadow-copper-glow group-hover:border-accentCyan transition-colors">
+            <svg class="w-5 h-5 text-toolCopper-light" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="block font-heading text-sm sm:text-base font-bold tracking-wider text-lightMetal leading-none">HANDLE THAT ENTERPRISE</span>
+            <span class="block text-[10px] uppercase tracking-[0.25em] text-toolCopper-light font-semibold mt-1">LLC &bull; Repair &amp; Maintenance</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-lightMetal/80">
+          <a href="#gallery" class="hover:text-toolCopper-light transition-colors">Showcase</a>
+          <a href="#focus" class="hover:text-toolCopper-light transition-colors">Services</a>
+          <a href="#studio" class="hover:text-toolCopper-light transition-colors">Warner Robins Hub</a>
+          <a href="#contact" class="hover:text-toolCopper-light transition-colors">Contact</a>
+        </nav>
+
+        <!-- Primary CTA -->
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="tel:+19123611089" class="hidden lg:flex items-center gap-1.5 text-xs text-lightMetal/75 hover:text-lightMetal transition-colors tabular-nums font-semibold">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-toolCopper"></i>
+            +1 (912) 361-1089
+          </a>
+          <a href="#contact" class="px-5 py-2.5 rounded-xl bg-toolCopper hover:bg-toolCopper-dark text-white font-semibold text-xs uppercase tracking-widest transition-all shadow-md hover:shadow-copper-glow">
+            Service Desk
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2 rounded-xl text-lightMetal hover:text-toolCopper-light border border-toolCopper/30">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surfaceSlate border-b border-toolCopper/25 px-6 py-5 space-y-4 shadow-xl">
+      <a href="#gallery" class="block text-sm font-medium text-lightMetal hover:text-toolCopper-light">Workshop Showcase</a>
+      <a href="#focus" class="block text-sm font-medium text-lightMetal hover:text-toolCopper-light">Repair &amp; Maintenance Services</a>
+      <a href="#studio" class="block text-sm font-medium text-lightMetal hover:text-toolCopper-light">Warner Robins Facility Hub</a>
+      <a href="#contact" class="block text-sm font-medium text-lightMetal hover:text-toolCopper-light">Service &amp; Contact</a>
+      <div class="pt-3 border-t border-toolCopper/20 flex flex-col gap-2">
+        <a href="tel:+19123611089" class="text-xs text-lightMetal/80 font-medium">+1 (912) 361-1089</a>
+        <a href="mailto:support@handlethatenterprise.org" class="text-xs text-toolCopper-light font-semibold">support@handlethatenterprise.org</a>
+      </div>
+    </div>
   </header>
 
-  <nav>
-    <a href="#about">À propos</a>
-    <a href="#gallery">Galerie</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main>
+    <!-- ===================================================================== -->
+    <!-- SECTION 1: HERO & VISUAL SHOWCASE                                     -->
+    <!-- ===================================================================== -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-workshopDark">
+      <div class="absolute top-1/4 right-0 w-96 h-96 rounded-full bg-toolCopper/15 blur-[130px] pointer-events-none"></div>
+      <div class="absolute bottom-0 left-10 w-80 h-80 rounded-full bg-accentCyan/10 blur-[120px] pointer-events-none"></div>
 
-  <div class="hero">
-    <p>Votre partenaire pour des machines agricoles durables</p>
-  </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Text Column -->
+          <div class="lg:col-span-6 space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-toolCopper/35 bg-surfaceSlate text-xs uppercase tracking-[0.2em] text-toolCopper-light font-bold shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-accentCyan animate-pulse"></span>
+              Warner Robins, Georgia &bull; Expert Repair &amp; Restoration
+            </div>
 
-  <section id="about">
-    <h2>À propos de nous</h2>
-    <p>
-      Chez <strong>HUNANIMA</strong>, nous nous spécialisons dans la fabrication et la distribution de 
-      <strong>machines agricoles simples</strong> pour faciliter le travail des agriculteurs. 
-      Nos solutions combinent <em>durabilité, efficacité et innovation</em> afin de répondre aux besoins de toutes les exploitations.
-    </p>
-  </section>
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-[56px] font-bold leading-[1.1] tracking-tight text-lightMetal">
+              Professional Goods <span class="copper-gradient-text italic">Repair</span> &amp; Maintenance.
+            </h1>
 
-  <section id="gallery">
-    <h2>Nos Machines</h2>
-    <div class="gallery">
-      <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse">
-      <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Machine agricole">
-      <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Équipement agricole simple">
+            <p class="text-base sm:text-lg text-lightMetal/75 max-w-xl leading-relaxed">
+              <strong class="text-lightMetal font-semibold">HANDLE THAT ENTERPRISE LLC</strong> provides expert personal and household goods repair, meticulous maintenance, and reliable restoration services[cite: 6].
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="#contact" class="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-toolCopper hover:bg-toolCopper-dark text-white font-semibold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-copper-glow">
+                Request Repair Estimate
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a href="#gallery" class="inline-flex items-center gap-2 px-7 py-4 rounded-xl border border-toolCopper/30 hover:border-accentCyan bg-surfaceSlate text-lightMetal font-semibold text-xs uppercase tracking-wider transition-all">
+                Explore Workshop
+                <i data-lucide="wrench" class="w-4 h-4 text-accentCyan"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Image Column -->
+          <div class="lg:col-span-6">
+            <div class="relative rounded-2xl overflow-hidden border border-toolCopper/30 shadow-card-workshop group">
+              <img 
+                src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=85" 
+                alt="Professional maintenance, tool repair, and precision equipment restoration" 
+                class="w-full h-[440px] sm:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-workshopDark/85 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-6 left-6 right-6 p-5 glass-panel-workshop rounded-xl flex items-center justify-between">
+                <div>
+                  <span class="text-[11px] uppercase tracking-widest text-accentCyan font-bold block">Warner Robins Workshop</span>
+                  <span class="font-heading text-base sm:text-lg font-bold text-lightMetal">322 Alabama Ave, Warner Robins, GA</span>[cite: 6]
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-toolCopper text-white flex items-center justify-center shrink-0">
+                  <i data-lucide="hammer" class="w-5 h-5"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 2: VISUAL GALLERY (LIGHTBOX CAPABLE)                          -->
+    <!-- ===================================================================== -->
+    <section id="gallery" class="py-20 bg-surfaceSlate border-y border-toolCopper/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-accentCyan font-bold">01 / Workshop Portfolio</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-lightMetal mt-1">
+            Precision Repairs &amp; Restoration Craft
+          </h2>
+          <p class="text-lightMetal/70 text-sm sm:text-base mt-2">
+            Click any workshop image to inspect in full resolution.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-toolCopper/25 shadow-card-workshop cursor-pointer lightbox-trigger" data-img="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85" data-title="Household &amp; Personal Goods Restoration">
+            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=85" alt="Detailed equipment maintenance and repair work" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-workshopDark/90 via-workshopDark/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] uppercase tracking-widest text-accentCyan font-bold">Restoration</span>
+              <h3 class="font-heading text-xl font-bold mt-0.5">Household Goods Repair</h3>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-toolCopper/25 shadow-card-workshop cursor-pointer lightbox-trigger" data-img="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=1200&q=85" data-title="Mechanical &amp; Equipment Maintenance">
+            <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=800&q=85" alt="Precision mechanical maintenance workshop" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-workshopDark/90 via-workshopDark/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] uppercase tracking-widest text-accentCyan font-bold">Maintenance</span>
+              <h3 class="font-heading text-xl font-bold mt-0.5">Mechanical &amp; Device Service</h3>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-toolCopper/25 shadow-card-workshop cursor-pointer lightbox-trigger" data-img="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85" data-title="Specialized Tool &amp; Appliance Servicing">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=85" alt="Specialized workshop servicing and tool repair" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-workshopDark/90 via-workshopDark/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] uppercase tracking-widest text-accentCyan font-bold">Servicing</span>
+              <h3 class="font-heading text-xl font-bold mt-0.5">Specialized Tool Care</h3>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 3: INTERACTIVE SERVICES & CAPABILITIES                        -->
+    <!-- ===================================================================== -->
+    <section id="focus" class="py-20 bg-workshopDark">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-toolCopper-light font-bold">02 / Service Divisions</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-lightMetal mt-1">
+            Repair &amp; Maintenance Scope
+          </h2>
+          <p class="text-lightMetal/70 text-sm sm:text-base mt-2">
+            Select a service category below to inspect our repair capabilities.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left Tabs -->
+          <div class="lg:col-span-5 space-y-3">
+            <button type="button" data-focus="0" class="focus-tab w-full text-left p-5 rounded-xl border border-toolCopper bg-surfaceSlate shadow-copper-glow transition-all flex items-center justify-between group">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-accentCyan font-bold">Division I</span>
+                <h3 class="font-heading text-xl font-bold text-lightMetal mt-0.5">Personal &amp; Household Goods Repair</h3>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-toolCopper-light"></i>
+            </button>
+
+            <button type="button" data-focus="1" class="focus-tab w-full text-left p-5 rounded-xl border border-toolCopper/20 bg-surfaceSlate/50 hover:border-toolCopper/50 transition-all flex items-center justify-between group">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-lightMetal/50 group-hover:text-accentCyan font-bold">Division II</span>
+                <h3 class="font-heading text-xl font-bold text-lightMetal mt-0.5">Preventative Maintenance &amp; Servicing</h3>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-lightMetal/40 group-hover:text-toolCopper-light"></i>
+            </button>
+
+            <button type="button" data-focus="2" class="focus-tab w-full text-left p-5 rounded-xl border border-toolCopper/20 bg-surfaceSlate/50 hover:border-toolCopper/50 transition-all flex items-center justify-between group">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-lightMetal/50 group-hover:text-accentCyan font-bold">Division III</span>
+                <h3 class="font-heading text-xl font-bold text-lightMetal mt-0.5">Restoration &amp; Specialized Upkeep</h3>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-lightMetal/40 group-hover:text-toolCopper-light"></i>
+            </button>
+          </div>
+
+          <!-- Right Display Card with Image & Details -->
+          <div class="lg:col-span-7 bg-surfaceSlate rounded-2xl border border-toolCopper/30 p-8 shadow-card-workshop relative overflow-hidden">
+            <div id="focus-content" class="space-y-6">
+              <img id="focus-img" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=85" alt="Personal & Household Goods Repair" class="w-full h-64 object-cover rounded-xl border border-toolCopper/20">
+              <div>
+                <span id="focus-tag" class="text-xs uppercase tracking-widest text-accentCyan font-bold">Personal &amp; Household Goods Repair</span>
+                <h3 id="focus-title" class="font-heading text-2xl sm:text-3xl font-bold text-lightMetal mt-1">Restoring Functionality to Valued Everyday Items</h3>
+              </div>
+              <p id="focus-desc" class="text-lightMetal/75 text-sm sm:text-base leading-relaxed">
+                Expert diagnostic testing, component replacement, and structural restoration for personal items, household appliances, and specialty goods with guaranteed craftsmanship.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 4: WARNER ROBINS HUB & STANDARDS                              -->
+    <!-- ===================================================================== -->
+    <section id="studio" class="py-20 bg-surfaceSlate border-y border-toolCopper/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-accentCyan font-bold">03 / Regional Facility</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-lightMetal mt-1">
+            Warner Robins Operations &amp; Standards
+          </h2>
+          <p class="text-lightMetal/70 text-sm sm:text-base mt-2">
+            Conveniently located in Houston County, Georgia with reliable turnaround times.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-toolCopper/25 bg-workshopDark p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-toolCopper/20 text-toolCopper-light flex items-center justify-center mb-4">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-heading text-xl font-bold text-lightMetal">Workshop Address</h3>
+              <p class="text-sm text-lightMetal/75 mt-2">
+                322 Alabama Ave<br>Warner Robins, GA 31093-2440, United States[cite: 6]
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-toolCopper/15 text-xs text-accentCyan font-bold uppercase tracking-wider">
+              Warner Robins, Georgia[cite: 6]
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-toolCopper/25 bg-workshopDark p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-toolCopper/20 text-toolCopper-light flex items-center justify-center mb-4">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-heading text-xl font-bold text-lightMetal">Private Independent</h3>
+              <p class="text-sm text-lightMetal/75 mt-2">
+                Dedicated attention to detail, transparent repair pricing, and meticulous quality control for every item entrusted to our shop.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-toolCopper/15 text-xs text-accentCyan font-bold uppercase tracking-wider">
+              NAICS 8114 &bull; Repair &amp; Maintenance[cite: 6]
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-toolCopper/25 bg-workshopDark p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-toolCopper/20 text-toolCopper-light flex items-center justify-center mb-4">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-heading text-xl font-bold text-lightMetal">Service Consultation</h3>
+              <p class="text-sm text-lightMetal/75 mt-2">
+                Direct scheduling and repair inquiries handled promptly by our workshop support desk.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-toolCopper/15 text-xs text-accentCyan font-bold uppercase tracking-wider">
+              Prompt Turnaround
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 5: CONTACT & INQUIRY FORM                                     -->
+    <!-- ===================================================================== -->
+    <section id="contact" class="py-20 bg-workshopDark relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Left Info Column -->
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <span class="text-xs uppercase tracking-[0.25em] text-toolCopper-light font-bold">04 / Service Desk</span>
+              <h2 class="font-heading text-3xl sm:text-4xl font-bold text-lightMetal mt-1">
+                Schedule a Repair.
+              </h2>
+              <p class="text-lightMetal/75 text-sm sm:text-base mt-2 leading-relaxed">
+                Reach out to our Warner Robins workshop to discuss your repair needs, maintenance schedule, or restoration project.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-xl bg-surfaceSlate border border-toolCopper/25 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-toolCopper/20 text-toolCopper-light flex items-center justify-center">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="text-[10px] uppercase tracking-wider text-lightMetal/60 block">Support Email</span>
+                    <a href="mailto:support@handlethatenterprise.org" class="text-lightMetal font-semibold text-sm hover:text-toolCopper-light break-all">
+                      support@handlethatenterprise.org
+                    </a>
+                  </div>
+                </div>
+                <button type="button" id="copy-email-btn" title="Copy Email" class="p-2 rounded-xl border border-toolCopper/30 hover:border-accentCyan text-lightMetal/70 hover:text-accentCyan transition-colors">
+                  <i data-lucide="copy" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <div class="p-4 rounded-xl bg-surfaceSlate border border-toolCopper/25 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-toolCopper/20 text-toolCopper-light flex items-center justify-center">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-[10px] uppercase tracking-wider text-lightMetal/60 block">Direct Telephone</span>
+                  <a href="tel:+19123611089" class="text-lightMetal font-semibold text-base hover:text-toolCopper-light tabular-nums">
+                    +1 (912) 361-1089
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Form Column -->
+          <div class="lg:col-span-7">
+            <div class="rounded-2xl border border-toolCopper/30 bg-surfaceSlate p-8 shadow-card-workshop">
+              <h3 class="font-heading text-2xl font-bold text-lightMetal mb-2">Repair &amp; Service Inquiry</h3>
+              <p class="text-xs text-lightMetal/60 mb-6">Routed directly to HANDLE THAT ENTERPRISE LLC.</p>
+
+              <form id="inquiry-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="name" class="block text-xs uppercase tracking-wider text-lightMetal/75 font-bold mb-1.5">Full Name *</label>
+                    <input type="text" id="name" required placeholder="e.g., Alex Vance" class="w-full px-4 py-3 rounded-xl bg-workshopDark border border-toolCopper/30 text-lightMetal text-sm placeholder-lightMetal/35 focus:outline-none focus:border-accentCyan">
+                  </div>
+                  <div>
+                    <label for="email" class="block text-xs uppercase tracking-wider text-lightMetal/75 font-bold mb-1.5">Email Address *</label>
+                    <input type="email" id="email" required placeholder="name@domain.com" class="w-full px-4 py-3 rounded-xl bg-workshopDark border border-toolCopper/30 text-lightMetal text-sm placeholder-lightMetal/35 focus:outline-none focus:border-accentCyan">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="message" class="block text-xs uppercase tracking-wider text-lightMetal/75 font-bold mb-1.5">Item Details &amp; Repair Needs *</label>
+                  <textarea id="message" rows="4" required placeholder="Describe the item needing repair or maintenance, current condition, and preferred timing..." class="w-full px-4 py-3 rounded-xl bg-workshopDark border border-toolCopper/30 text-lightMetal text-sm placeholder-lightMetal/35 focus:outline-none focus:border-accentCyan"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-toolCopper hover:bg-toolCopper-dark text-white font-semibold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2">
+                  <span>Submit Repair Request</span>
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+              </form>
+
+              <!-- Success State -->
+              <div id="form-success" class="hidden text-center py-8 space-y-3">
+                <div class="w-12 h-12 rounded-full bg-toolCopper/25 border border-toolCopper-light flex items-center justify-center text-toolCopper-light mx-auto">
+                  <i data-lucide="check" class="w-6 h-6"></i>
+                </div>
+                <h4 class="font-heading text-2xl font-bold text-lightMetal">Inquiry Prepared</h4>
+                <p class="text-xs text-lightMetal/75 max-w-sm mx-auto">
+                  Thank you, <span id="confirm-name" class="font-semibold text-lightMetal"></span>. Your request has been formatted for <span class="text-accentCyan font-semibold">support@handlethatenterprise.org</span>.
+                </p>
+                <div class="pt-2">
+                  <a id="mailto-fallback" href="mailto:support@handlethatenterprise.org" class="px-6 py-2.5 rounded-xl bg-toolCopper text-white text-xs font-semibold uppercase tracking-wider inline-block">
+                    Open in Mail Client
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0A0D10] text-lightMetal/70 py-12 text-xs border-t border-toolCopper/25">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
+        <div>
+          <span class="font-heading text-lg font-bold text-white block">HANDLE THAT ENTERPRISE LLC</span>
+          <span class="text-[10px] uppercase tracking-widest text-accentCyan block mt-0.5">Repair &amp; Maintenance Services</span>
+        </div>
+        <div class="text-center md:text-right">
+          <p>322 Alabama Ave, Warner Robins, GA 31093-2440[cite: 6]</p>
+          <p class="mt-1">Email: <a href="mailto:support@handlethatenterprise.org" class="text-toolCopper-light hover:underline">support@handlethatenterprise.org</a> | Phone: <a href="tel:+19123611089" class="text-white hover:underline tabular-nums">+1 (912) 361-1089</a></p>
+        </div>
+      </div>
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-lightMetal/50">
+        <p>&copy; <span id="current-year"></span> HANDLE THAT ENTERPRISE LLC. All Rights Reserved.</p>
+        <p>Private independent repair and maintenance workshop.</p>
+      </div>
     </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contactez-nous</h2>
-    <p><strong>Email :</strong> admin@tyusex.shop</p>
-    <p><strong>Téléphone :</strong> +33 7 38 50 26 36</p>
-    <p><strong>Adresse :</strong> Avenue Baratier, Montmorency, 95160, France</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 HUNANIMA - Tous droits réservés.</p>
   </footer>
 
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox-modal" class="hidden fixed inset-0 z-50 bg-workshopDark/95 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="relative max-w-4xl w-full">
+      <button type="button" id="lightbox-close" class="absolute -top-12 right-0 text-white hover:text-accentCyan p-2">
+        <i data-lucide="x" class="w-8 h-8"></i>
+      </button>
+      <img id="lightbox-img" src="" alt="Expanded View" class="w-full max-h-[80vh] object-contain rounded-2xl border border-toolCopper/40">
+      <p id="lightbox-caption" class="text-white text-center font-heading text-xl mt-4"></p>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-3 rounded-xl bg-surfaceSlate border border-accentCyan text-white text-xs font-semibold uppercase tracking-wider shadow-lg">
+    Email copied to clipboard
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    lucide.createIcons();
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Lightbox Functionality
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        lightboxImg.src = trigger.dataset.img;
+        lightboxCaption.textContent = trigger.dataset.title;
+        lightboxModal.classList.remove('hidden');
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => lightboxModal.classList.add('hidden'));
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) lightboxModal.classList.add('hidden');
+    });
+
+    // Interactive Focus Tabs
+    const focusData = [
+      {
+        tag: 'Personal & Household Goods Repair',
+        title: 'Restoring Functionality to Valued Everyday Items',
+        desc: 'Expert diagnostic testing, component replacement, and structural restoration for personal items, household appliances, and specialty goods with guaranteed craftsmanship.',
+        img: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=85'
+      },
+      {
+        tag: 'Preventative Maintenance & Servicing',
+        title: 'Proactive Upkeep & Mechanical Tuning',
+        desc: 'Scheduled maintenance programs, calibration, and tune-ups designed to extend the lifespan and performance of your essential equipment and goods.',
+        img: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=1000&q=85'
+      },
+      {
+        tag: 'Restoration & Specialized Upkeep',
+        title: 'Detailed Refurbishment & Expert Care',
+        desc: 'Specialized cosmetic restoration, component overhaul, and meticulous refurbishment of treasured personal possessions and household assets.',
+        img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=85'
+      }
+    ];
+
+    const focusTabs = document.querySelectorAll('.focus-tab');
+    const focusImg = document.getElementById('focus-img');
+    const focusTag = document.getElementById('focus-tag');
+    const focusTitle = document.getElementById('focus-title');
+    const focusDesc = document.getElementById('focus-desc');
+
+    focusTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        focusTabs.forEach(t => {
+          t.classList.remove('border-toolCopper', 'bg-surfaceSlate', 'shadow-copper-glow');
+          t.classList.add('border-toolCopper/20', 'bg-surfaceSlate/50');
+          t.querySelector('span').classList.remove('text-accentCyan');
+          t.querySelector('span').classList.add('text-lightMetal/50');
+          t.querySelector('i').classList.remove('text-toolCopper-light');
+          t.querySelector('i').classList.add('text-lightMetal/40');
+        });
+
+        tab.classList.remove('border-toolCopper/20', 'bg-surfaceSlate/50');
+        tab.classList.add('border-toolCopper', 'bg-surfaceSlate', 'shadow-copper-glow');
+        tab.querySelector('span').classList.add('text-accentCyan');
+        tab.querySelector('i').classList.add('text-toolCopper-light');
+
+        const data = focusData[index];
+        focusImg.src = data.img;
+        focusTag.textContent = data.tag;
+        focusTitle.textContent = data.title;
+        focusDesc.textContent = data.desc;
+      });
+    });
+
+    // Copy Email Toast
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    const toast = document.getElementById('toast');
+    copyEmailBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('support@handlethatenterprise.org').then(() => {
+        toast.classList.remove('hidden');
+        setTimeout(() => toast.classList.add('hidden'), 2500);
+      });
+    });
+
+    // Inquiry Form Submission
+    const inquiryForm = document.getElementById('inquiry-form');
+    const formSuccess = document.getElementById('form-success');
+    const confirmName = document.getElementById('confirm-name');
+    const mailtoFallback = document.getElementById('mailto-fallback');
+
+    inquiryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      confirmName.textContent = name;
+      const subject = encodeURIComponent(`Repair & Service Inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nItem & Service Details:\n${message}`);
+      mailtoFallback.href = `mailto:support@handlethatenterprise.org?subject=${subject}&body=${body}`;
+
+      inquiryForm.classList.add('hidden');
+      formSuccess.classList.remove('hidden');
+    });
+  </script>
 </body>
 </html>
